@@ -1,7 +1,6 @@
 {
   "name": "chatrepo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "async": "^2.6.0",
@@ -31,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/chandankrishnan/chatRepo/issues"
   },
-  "homepage": "https://github.com/chandankrishnan/chatRepo#readme"
+  "homepage": "https://github.com/chandankrishnan/chatRepo#readme",
+  "description": ""
 }
