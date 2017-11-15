@@ -6,5 +6,4 @@ var config = {
     "region": "us-east-1",
     "bucket":"invoicehipcask"
 }
-// BgomU5G5Tb6MM3TPomZx/4W69pOUMhRhk
 module.exports = config
