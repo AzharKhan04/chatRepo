@@ -1,8 +1,8 @@
 "use strict";
 //config
 var config = {
-    "accessKeyId": "AKIAJAS6TD6ODJ72VY5Q",
-    "secretAccessKey": "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",
+    "accessKeyId": "AKIAI3JN4OWRODJANZZQ",
+    "secretAccessKey": "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",
     "region": "us-east-1",
     "bucket":"invoicehipcask"
 }
