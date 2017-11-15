@@ -9,9 +9,9 @@ var fs=require('fs')
 var config=require('../../../config')
 
 var s3 = new AWS.S3({
-    "accessKeyId": config.accessKeyId,
-    "secretAccessKey":config.secretAccessKey,
-    "region": config.region
+    "accessKeyId": config.accessKeyId||process.env.accessKeyId,
+    "secretAccessKey":config.secretAccessKey||process.env.secretAccessKey,
+    "region": config.region||process.env.region
 })
 
 
@@ -34,7 +34,7 @@ Media.prototype.upload = function (data, callback) {
         if(err)console.log(err)
         else {
             s3.putObject({
-            Bucket: config.bucket,
+            Bucket: config.bucket||process.env.bucket,
             Key: files.file[0].originalFilename,
             Body:data,
             ContentType:files.file[0].originalFilename.substring(files.file[0].originalFilename.lastIndexOf('.') + 1, files.file[0].originalFilename.length),
@@ -43,7 +43,7 @@ Media.prototype.upload = function (data, callback) {
             if(err)console.log(err)
             else{
                 s3.getSignedUrl('putObject',{
-                    Bucket:config.bucket,
+                    Bucket:config.bucket||process.env.bucket,
                     Key:files.file[0].originalFilename
                 },function(err,url){
                     if(err)callback(err,null)
